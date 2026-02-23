@@ -3,18 +3,36 @@ import os
 from constants import *
 from pathlib import Path
 from buildIndex import *
+import shutil
 
+def moveStyles():
+
+   pathToRm = Path(SERVE_PATH)/ Path(STYLES)
+   if  os.path.exists(pathToRm):
+      for file in os.listdir(pathToRm):
+         filePath = pathToRm / Path(file)
+         os.remove(filePath)
+      
+
+   stylesPathOld = Path(TEMPLATE_PATH)/ Path(STYLES)
+
+
+
+   
+
+   shutil.copytree(str(stylesPathOld), pathToRm, dirs_exist_ok=True)
 
 def clearEntries():
    for file in os.listdir(ENTRIES):
 
       filePath = Path(ENTRIES) / Path(file)
+      
       os.remove(filePath)
 
 def main():
    folders = os.listdir(RAW)
    clearEntries()
-
+   moveStyles()
    htmlFilePaths = []
    for folder in folders:
 

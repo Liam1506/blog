@@ -5,14 +5,32 @@
    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
    <title>Page Title</title>
    <meta name='viewport' content='width=device-width, initial-scale=1'>
-   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+   <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
    <script src='main.js'></script>
 </head>
 <body>
-   <header><h1>Blog</h1></header>
-   <hr>
-   <main><ul><li><a href="entries/text.html">entries/text.html</a><hr></li><li><a href="entries/text.html">entries/text.html</a><hr></li></ul></main>
-   <hr>
-   <footer><p>Footer</p></footer>
+   <header class="hn-header">
+    <a href="#" class="title">My blog</a>
+
+    <nav class="nav-links">
+        <a href="#">GitHub</a><span class="separator">|</span>
+        <a href="#">Mail</a><span class="separator">|</span>
+        <a href="#">Projects</a><span class="separator">|</span>
+        <a href="#">Linkedin</a><span class="separator">|</span>
+    </nav>
+</header>
+   <main><ul><li><a href="entries/text.html">entries/text.html</a></li><li><a href="entries/text.html">entries/text.html</a></li></ul></main>
+  
+   <footer class="hn-footer">
+    <div class="footer-divider"></div>
+    
+    <nav class="footer-links">
+        <a href="#">View on GitHub</a> | 
+        <a href="#">Imprint</a> | 
+        <a href="#">Contact</a> 
+    </nav>
+
+ 
+</footer>
 </body>
 </html>
