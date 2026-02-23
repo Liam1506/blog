@@ -31,7 +31,7 @@ def main():
     
     safe_name = sanitize_filename(nameOfArticle)
     
-    article_folder = Path(raw) / safe_name
+    article_folder = Path(RAW) / safe_name
 
     if article_folder.exists():
         print(f"Error: The folder '{safe_name}' already exists.")
