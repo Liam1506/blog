@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# 1. Run your script using a relative path
+# We use python3 to ensure it executes correctly
+python3 ./md2html.py
+
+# 2. Check if the script succeeded
+if [ $? -ne 0 ]; then
+  echo "MD to HTML conversion failed. Commit aborted."
+  exit 1
+fi
