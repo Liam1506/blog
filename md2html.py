@@ -2,6 +2,7 @@ import markdown
 import os
 from constants import *
 from pathlib import Path
+from buildIndex import *
 
 
 def clearEntries():
@@ -13,6 +14,8 @@ def clearEntries():
 def main():
    folders = os.listdir(RAW)
    clearEntries()
+
+   htmlFilePaths = []
    for folder in folders:
 
        
@@ -40,6 +43,8 @@ def main():
 
             with open(outputName, "w", encoding="utf-8") as f:
                f.write(finishedFile)
+            htmlFilePaths.append(Path(ENTRIES_NAME) / Path(fileNameOutput))
+   buildIndex(paths=htmlFilePaths)
 
 if __name__ == "__main__":
    main()
