@@ -56,12 +56,12 @@ The script will process your Markdown and templates, placing the finished websit
 
 ## 📁 Project Structure
 
-- **entries/**: The "kitchen." Each sub-folder represents a post containing `text.md` and `metadata.json`.
-- **template/**: The "closet." Contains the HTML layouts that wrap your content.
-- **docs/**: The "showroom." This is the final output folder ready for hosting (e.g., GitHub Pages).
-- **create_entry.py**: Interactive script to create new post directories.
-- **compile.py**: The engine that builds the static site.
-- **requirements.txt**: Essential Python packages.
+- **entries/**: Each sub-folder represents a post containing `text.md` and `metadata.json`.
+- **template/**: Contains the HTML layouts that wrap your content.
+- **docs/**: This is the final output folder ready for hosting (e.g., GitHub Pages). Never edit here. It will be overwritten
+- **create_entry.py**: Creates a new artcile with required metadata
+- **compile.py**: Creates requried html files
+- **templates/**: Containes templates for fooder, hearder, blog etc.
 
 ## 🚀 Deployment
 
