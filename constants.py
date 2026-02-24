@@ -22,3 +22,4 @@ INDEX_TEMPLATE =  TEMPLATE_PATH + 'indexTemplate.html'
 PREFETCH_TEMPLATE =  TEMPLATE_PATH + 'prefetchTemplate.html'
 
 STYLES = "styles/"
+ASSETS_FOLDER = "assets/"

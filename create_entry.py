@@ -38,7 +38,9 @@ def main():
     if article_folder.exists():
         print(f"Error: The folder '{safe_name}' already exists.")
         return
+    assetsPath =  article_folder / Path(ASSETS_FOLDER) 
     article_folder.mkdir(parents=True, exist_ok=True)
+    assetsPath.mkdir(parents=True, exist_ok=True)
     
     createMetadata(nameOfArticle, date, article_folder)
     createFile(article_folder, date, nameOfArticle)
