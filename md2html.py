@@ -2,8 +2,9 @@ import markdown
 import os
 from constants import *
 from pathlib import Path
-from buildIndex import *
+from scripts.buildIndex import *
 import shutil
+from scripts.metadata.getMetadata import getMetadata
 
 def moveStyles():
 
@@ -17,9 +18,6 @@ def moveStyles():
    stylesPathOld = Path(TEMPLATE_PATH)/ Path(STYLES)
 
 
-
-   
-
    shutil.copytree(str(stylesPathOld), pathToRm, dirs_exist_ok=True)
 
 def clearEntries():
@@ -31,38 +29,38 @@ def clearEntries():
 
 def main():
    folders = os.listdir(RAW)
+   foldersToPublish = []
    clearEntries()
    moveStyles()
-   htmlFilePaths = []
    for folder in folders:
+      metadata = getMetadata(folder)
+      if not metadata.publish:
+         continue
+      foldersToPublish.append(folder)
 
-       
       path = Path(RAW) / Path(folder)
-      files = os.listdir(path) 
-
-      for file in files:
-         if file != "metadata.json":
-            print(file)
-            filePath = path / Path(file)
-            fileNameOutput = file.replace('.md', '.html')
+      filePath = path / Path(TEXT_FILE_NAME)
+      fileNameOutput = folder+".html"
 
 
 
-            outputName = Path(ENTRIES) / Path(fileNameOutput)
+      outputName = Path(ENTRIES) / Path(fileNameOutput)
 
-            outputName.parent.mkdir(parents=True, exist_ok=True)
-           
-            with open(filePath, "r", encoding="utf-8") as f:
-               html = markdown.markdown(f.read())
+      outputName.parent.mkdir(parents=True, exist_ok=True)
+      
 
-            with open(BLOG_TEMPLATE, "r", encoding="utf-8") as f:
-               template = f.read()
-            finishedFile = template.replace("{{content}}", html)
+      blogTemplate = imreadFile(BLOG_TEMPLATE)
+      with open(filePath, "r", encoding="utf-8") as f:
+         mdHtml = markdown.markdown(f.read())
 
-            with open(outputName, "w", encoding="utf-8") as f:
-               f.write(finishedFile)
-            htmlFilePaths.append(Path(ENTRIES_NAME) / Path(fileNameOutput))
-   buildIndex(paths=htmlFilePaths)
+
+      blogTemplate = updateTemplate(key="content", template=blogTemplate,updateValue=mdHtml)
+
+      blogTemplate = updateTemplate(key="footer", template=blogTemplate,updateValue=imreadFile(FOOTER_PATH))
+
+      with open(outputName, "w", encoding="utf-8") as f:
+         f.write(blogTemplate)
+   buildIndex(paths= foldersToPublish)
 
 if __name__ == "__main__":
    main()

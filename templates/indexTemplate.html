@@ -7,30 +7,12 @@
    <meta name='viewport' content='width=device-width, initial-scale=1'>
    <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
    <script src='main.js'></script>
+   {{prefetch}}
 </head>
 <body>
-   <header class="hn-header">
-    <a href="#" class="title">My blog</a>
-
-    <nav class="nav-links">
-        <a href="#">GitHub</a><span class="separator">|</span>
-        <a href="#">Mail</a><span class="separator">|</span>
-        <a href="#">Projects</a><span class="separator">|</span>
-        <a href="#">Linkedin</a><span class="separator">|</span>
-    </nav>
-</header>
+{{header}}
    <main><ul>{{links}}</ul></main>
   
-   <footer class="hn-footer">
-    <div class="footer-divider"></div>
-    
-    <nav class="footer-links">
-        <a href="#">View on GitHub</a> | 
-        <a href="#">Imprint</a> | 
-        <a href="#">Contact</a> 
-    </nav>
-
- 
-</footer>
+{{footer}}
 </body>
 </html>
