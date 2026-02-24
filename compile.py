@@ -56,6 +56,8 @@ def main():
 
       blogTemplate = updateTemplate(key="content", template=blogTemplate,updateValue=mdHtml)
 
+      blogTemplate = updateTemplate(key="title", template=blogTemplate,updateValue=metadata.name)
+
       blogTemplate = updateTemplate(key="footer", template=blogTemplate,updateValue=imreadFile(FOOTER_PATH))
 
       with open(outputName, "w", encoding="utf-8") as f:
