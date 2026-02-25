@@ -18,14 +18,17 @@ def moveStyles():
    shutil.copytree(str(stylesPathOld), pathServe, dirs_exist_ok=True)
 
 def clearEntries():
-   if os.path.isfile(CNAME):
-      cname = imreadFile(CNAME)
-   if  os.path.exists(SERVE_PATH):
-      shutil.rmtree(SERVE_PATH)
-   
-   if os.path.isfile(CNAME):
-      with open(CNAME, "w") as f:
-         f.write(cname)
+    cname_content = ""
+    if os.path.isfile(CNAME):
+        cname_content = imreadFile(CNAME)
+    
+    if os.path.exists(SERVE_PATH):
+        shutil.rmtree(SERVE_PATH)
+    
+    os.makedirs(SERVE_PATH, exist_ok=True)
+    
+    with open(CNAME, "w") as f:
+        f.write(cname_content)
 
 
 def main():
