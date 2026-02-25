@@ -10,23 +10,12 @@ body {
 
 /* The Orange Header Bar */
 .hn-header {
-  background-color: #d59b9b; /* Canonical HN Orange */
+  background-color: #d59b9b;
   display: flex;
   align-items: center;
   padding: 2px;
   font-size: 10pt;
   color: #000000;
-}
-
-/* The "Y" Logo */
-.logo {
-  border: 1px white solid;
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 4px;
 }
 
 .title {
@@ -36,7 +25,6 @@ body {
   color: #000000;
 }
 
-/* Navigation Links */
 .nav-links {
   display: flex;
   gap: 5px;
@@ -57,24 +45,18 @@ body {
   margin: 0 2px;
 }
 
-/* Right-aligned User Section */
 .user-info {
   margin-left: auto;
   padding-right: 5px;
 }
 
-.karma {
-  color: #3c3c3c;
-}
 .hn-footer {
   margin-top: 20px;
   padding-bottom: 25px;
   text-align: center;
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 8pt; /* Footer text is slightly smaller than the header */
+  font-size: 8pt;
 }
 
-/* The thin orange line divider */
 .footer-divider {
   border-top: 2px solid #d59b9b;
   margin: 10px auto;
@@ -83,39 +65,24 @@ body {
 
 .footer-links {
   margin: 15px 0;
-  color: #828282; /* Muted grey for the pipe separators */
+  color: #828282;
 }
 
 .footer-links a {
   text-decoration: none;
-  color: #000000; /* Links are black */
+  color: #000000;
 }
 
 .footer-links a:hover {
   text-decoration: underline;
 }
 
-/* Search Bar Section */
-.search-container {
-  color: #828282;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
-
-.search-container input {
-  border: 1px solid #828282;
-  height: 18px;
-  width: 150px;
-  padding: 2px;
-}
 .article-section {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
-  padding: 0 10px; /* Added slight padding for mobile screens */
 }
+
 img {
   max-width: 800px;
   max-height: 800px;
@@ -133,10 +100,10 @@ img {
 }
 table {
   border-collapse: collapse;
-  width: 100%; /* Takes up full width of article-section */
-  max-width: 100%; /* Ensures it never exceeds the 800px parent */
+  width: 100%;
+  max-width: 100%;
   font-family: sans-serif;
-  table-layout: auto; /* Allows columns to adjust, but stays within 100% */
+  table-layout: auto;
 }
 
 table th,
@@ -144,7 +111,6 @@ table td {
   border: 1px solid #dddddd;
   padding: 12px 15px;
   text-align: left;
-  /* 3. This forces long text/links to wrap instead of stretching the table */
   word-wrap: break-word;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -160,15 +126,7 @@ table tr:nth-child(even) {
 }
 
 pre {
-  padding: 16px; /* Adds space inside the box */
-  border-radius: 8px; /* Optional: Gives it nice rounded corners */
-  overflow-x: auto; /* Ensures long lines of code get a scrollbar */
-  line-height: 1.45; /* Makes the lines of code easier to read */
-}
-
-/* This ensures the text inside doesn't have its own weird margins */
-pre code {
-  padding: 0;
-  margin: 0;
-  background-color: transparent;
+  padding: 16px;
+  overflow-x: auto;
+  line-height: 1.45;
 }
