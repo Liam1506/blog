@@ -1,5 +1,9 @@
+
+
 SERVE_PATH = 'docs/'
 RAW = 'articles/'
+
+CNAME = SERVE_PATH+"CNAME"
 
 METADATA_FILE_NAME = 'metadata.json'
 
