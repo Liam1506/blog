@@ -5,16 +5,10 @@ from pathlib import Path
 from scripts.buildIndex import *
 import shutil
 from scripts.metadata.getMetadata import getMetadata
-import pymdownx
 
 def moveStyles():
-
    pathServe = Path(SERVE_PATH)/ Path(STYLES)
-  
-
    stylesPathOld = Path(TEMPLATE_PATH)/ Path(STYLES)
-
-
    shutil.copytree(str(stylesPathOld), pathServe, dirs_exist_ok=True)
 
 def clearEntries():
@@ -77,8 +71,8 @@ def main():
                      'custom_checkbox': True, 
                  },
                  'codehilite': {
-                     'css_class': 'highlight', # Adds a class to the div for styling
-                     'guess_lang': False       # Best to keep False to avoid weird coloring
+                     'css_class': 'highlight',
+                     'guess_lang': True      
                  }
              
              }

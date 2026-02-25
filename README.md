@@ -1,7 +1,8 @@
 # Python Blog Generator
+
 Visit at [blog.wttg.li](https://blog.wttg.li)
 
-A lean, script-based static site generator for minimalist blogging. Write in Markdown, compile to HTML, and host anywhere.
+A very simple (<300 lines of python code), script-based static site generator for minimalist blogging. Write in Markdown, compile to HTML, and host anywhere.
 
 ---
 
