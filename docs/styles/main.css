@@ -130,3 +130,7 @@ pre {
   overflow-x: auto;
   line-height: 1.45;
 }
+
+.blog-entry-link {
+  list-style: none; /* Removes the bullets */
+}
