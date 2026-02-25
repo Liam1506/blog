@@ -5,32 +5,28 @@ from pathlib import Path
 from scripts.buildIndex import *
 import shutil
 from scripts.metadata.getMetadata import getMetadata
+import pymdownx
 
 def moveStyles():
 
-   pathToRm = Path(SERVE_PATH)/ Path(STYLES)
-   if  os.path.exists(pathToRm):
-      for file in os.listdir(pathToRm):
-         filePath = pathToRm / Path(file)
-         os.remove(filePath)
-      
+   pathServe = Path(SERVE_PATH)/ Path(STYLES)
+  
 
    stylesPathOld = Path(TEMPLATE_PATH)/ Path(STYLES)
 
 
-   shutil.copytree(str(stylesPathOld), pathToRm, dirs_exist_ok=True)
+   shutil.copytree(str(stylesPathOld), pathServe, dirs_exist_ok=True)
 
 def clearEntries():
-   for file in os.listdir(ENTRIES):
+   if  os.path.exists(SERVE_PATH):
+      shutil.rmtree(SERVE_PATH)
 
-      filePath = Path(ENTRIES) / Path(file)
-      
-      os.remove(filePath)
 
 def main():
    folders = os.listdir(RAW)
    foldersToPublish = []
    clearEntries()
+
    moveStyles()
    for folder in folders:
       metadata = getMetadata(folder)
@@ -42,27 +38,52 @@ def main():
       filePath = path / Path(TEXT_FILE_NAME)
       fileNameOutput = folder+".html"
 
-
-
       outputName = Path(ENTRIES) / Path(fileNameOutput)
 
       outputName.parent.mkdir(parents=True, exist_ok=True)
       
-
       blogTemplate = imreadFile(BLOG_TEMPLATE)
       with open(filePath, "r", encoding="utf-8") as f:
-         mdHtml = markdown.markdown(f.read())
+         mdHtml = markdown.markdown(
+             f.read(),
+             extensions=[
+                  'tables',
+                  'fenced_code',
+                  'extra',
+                  'toc',
+                  'codehilite',          
+                  'footnotes',           
+                  'admonition',          
+                  'pymdownx.superfences',
+                  'pymdownx.tasklist',  
+                  'pymdownx.magiclink', 
+                  'pymdownx.caret',
+               ],
+             extension_configs={
+                 'toc': {
+                     'permalink': True, 
+                     'baselevel': 1,
+                 },
+                 'pymdownx.tasklist': {
+                     'custom_checkbox': True, 
+                 },
+                 'codehilite': {
+                     'css_class': 'highlight', # Adds a class to the div for styling
+                     'guess_lang': False       # Best to keep False to avoid weird coloring
+                 }
+             
+             }
+         )
 
-
-      blogTemplate = updateTemplate(key="content", template=blogTemplate,updateValue=mdHtml)
-
-      blogTemplate = updateTemplate(key="title", template=blogTemplate,updateValue=metadata.name)
-
-      blogTemplate = updateTemplate(key="footer", template=blogTemplate,updateValue=imreadFile(FOOTER_PATH))
+      blogTemplate = updateTemplate(key="content", template=blogTemplate, updateValue=mdHtml)
+      blogTemplate = updateTemplate(key="title", template=blogTemplate, updateValue=metadata.name)
+      blogTemplate = updateTemplate(key="footer", template=blogTemplate, updateValue=imreadFile(FOOTER_PATH))
+      blogTemplate = updateTemplate(key="header", template=blogTemplate, updateValue=imreadFile(HEADER_PATH))
 
       with open(outputName, "w", encoding="utf-8") as f:
          f.write(blogTemplate)
-   buildIndex(paths= foldersToPublish)
+   
+   buildIndex(paths=foldersToPublish)
 
 if __name__ == "__main__":
    main()

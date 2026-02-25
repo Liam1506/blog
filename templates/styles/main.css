@@ -1,117 +1,174 @@
-body {
-            margin: 0;
-            font-family: Verdana, Geneva, sans-serif;
-            background-color: #f6f6ef; /* Light beige background common on HN */
-        }
-
-        /* The Orange Header Bar */
-        .hn-header {
-            background-color: #d59b9b; /* Canonical HN Orange */
-            display: flex;
-            align-items: center;
-            padding: 2px;
-            font-size: 10pt;
-            color: #000000;
-        }
-
-        /* The "Y" Logo */
-        .logo {
-            border: 1px white solid;
-            width: 18px;
-            height: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 4px;
-        }
-
- 
-        .title {
-            font-weight: bold;
-            margin-right: 10px;
-            text-decoration: none;
-            color: #000000;
-        }
-
-        /* Navigation Links */
-        .nav-links {
-            display: flex;
-            gap: 5px;
-        }
-
-        .nav-links a, .user-info a {
-            text-decoration: none;
-            color: #000000;
-        }
-
-        .nav-links a:hover, .user-info a:hover {
-            text-decoration: underline;
-        }
-
-        .separator {
-            margin: 0 2px;
-        }
-
-        /* Right-aligned User Section */
-        .user-info {
-            margin-left: auto;
-            padding-right: 5px;
-        }
-
-        .karma {
-            color: #3c3c3c;
-        }
-        .hn-footer {
-        margin-top: 20px;
-        padding-bottom: 25px;
-        text-align: center;
-        font-family: Verdana, Geneva, sans-serif;
-        font-size: 8pt; /* Footer text is slightly smaller than the header */
-    }
-
-    /* The thin orange line divider */
-    .footer-divider {
-        border-top: 2px solid #d59b9b;
-        margin: 10px auto;
-        width: 100%;
-    }
-
-    .footer-links {
-        margin: 15px 0;
-        color: #828282; /* Muted grey for the pipe separators */
-    }
-
-    .footer-links a {
-        text-decoration: none;
-        color: #000000; /* Links are black */
-    }
-
-    .footer-links a:hover {
-        text-decoration: underline;
-    }
-
-    /* Search Bar Section */
-    .search-container {
-        color: #828282;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-    }
-
-    .search-container input {
-        border: 1px solid #828282;
-        height: 18px;
-        width: 150px;
-        padding: 2px;
-    }
-   .article-section {
-    padding: 25px;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
+* {
+  box-sizing: border-box;
 }
-    .back-link{
 
-        padding: 10px;
-    }
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: #f6f6ef;
+}
+
+/* The Orange Header Bar */
+.hn-header {
+  background-color: #d59b9b; /* Canonical HN Orange */
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  font-size: 10pt;
+  color: #000000;
+}
+
+/* The "Y" Logo */
+.logo {
+  border: 1px white solid;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.title {
+  font-weight: bold;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 5px;
+}
+
+.nav-links a,
+.user-info a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.nav-links a:hover,
+.user-info a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 2px;
+}
+
+/* Right-aligned User Section */
+.user-info {
+  margin-left: auto;
+  padding-right: 5px;
+}
+
+.karma {
+  color: #3c3c3c;
+}
+.hn-footer {
+  margin-top: 20px;
+  padding-bottom: 25px;
+  text-align: center;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 8pt; /* Footer text is slightly smaller than the header */
+}
+
+/* The thin orange line divider */
+.footer-divider {
+  border-top: 2px solid #d59b9b;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.footer-links {
+  margin: 15px 0;
+  color: #828282; /* Muted grey for the pipe separators */
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #000000; /* Links are black */
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Search Bar Section */
+.search-container {
+  color: #828282;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-container input {
+  border: 1px solid #828282;
+  height: 18px;
+  width: 150px;
+  padding: 2px;
+}
+.article-section {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  padding: 0 10px; /* Added slight padding for mobile screens */
+}
+img {
+  max-width: 800px;
+  max-height: 800px;
+  width: auto;
+  height: auto;
+}
+.back-link {
+  padding: 10px;
+}
+
+.headerlink {
+  text-decoration: none;
+  visibility: hidden;
+  margin-left: 10px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%; /* Takes up full width of article-section */
+  max-width: 100%; /* Ensures it never exceeds the 800px parent */
+  font-family: sans-serif;
+  table-layout: auto; /* Allows columns to adjust, but stays within 100% */
+}
+
+table th,
+table td {
+  border: 1px solid #dddddd;
+  padding: 12px 15px;
+  text-align: left;
+  /* 3. This forces long text/links to wrap instead of stretching the table */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+pre {
+  padding: 16px; /* Adds space inside the box */
+  border-radius: 8px; /* Optional: Gives it nice rounded corners */
+  overflow-x: auto; /* Ensures long lines of code get a scrollbar */
+  line-height: 1.45; /* Makes the lines of code easier to read */
+}
+
+/* This ensures the text inside doesn't have its own weird margins */
+pre code {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}

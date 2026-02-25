@@ -1,33 +1,55 @@
-<!DOCTYPE html>
-<html>
-<head>
-   <meta charset='utf-8'>
-   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-   <title>Page Title</title>
-   <meta name='viewport' content='width=device-width, initial-scale=1'>
-   <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
-   <script src='main.js'></script>
-   <link rel="prefetch" href="entries/hello-world.html">
-</head>
-<body>
-   <header class="hn-header">
-    <a href="#" class="title">My blog</a>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <nav class="nav-links">
-         <a href="https://wttg.li/">About</a><span class="separator">|</span>
-        <a href="https://wttg.li/gh">GitHub</a><span class="separator">|</span>
-        <a href="https://wttg.li/mail">Mail</a><span class="separator">|</span>
-        <a href="https://wttg.li/in">Linkedin</a><span class="separator">|</span>
-    </nav>
+    <!-- Recommended meta for SEO and social sharing -->
+    <meta name="description" content="A blog about stuff I find interesting" />
+    <meta name="author" content="Liam Wittig" />
+
+    <!-- Preload critical CSS for performance -->
+    <link rel="preload" href="styles/main.css" as="style" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+
+    <link rel="prefetch" href="entries/md-test.html" />
+<link rel="prefetch" href="entries/hello-world.html" />
+
+  </head>
+  <body>
+    <header class="hn-header">
+  <a href="https://blog.wttg.li/" class="title">My blog</a>
+
+  <nav class="nav-links">
+    <a href="https://wttg.li/">About</a><span class="separator">|</span>
+    <a href="https://wttg.li/gh">GitHub</a><span class="separator">|</span>
+    <a href="https://wttg.li/mail">Mail</a><span class="separator">|</span>
+    <a href="https://wttg.li/in">Linkedin</a><span class="separator">|</span>
+  </nav>
 </header>
-   <main><ul><li>
-  <strong>1.</strong> 
+
+
+    <main>
+      <ul>
+        <li>
+  <strong>1.</strong>
+  <a href="entries/md-test.html">MD Test</a>
+  <br />
+  <small style="color: grey"><time>2026-02-25 08:51</time></small>
+</li>
+<li>
+  <strong>2.</strong>
   <a href="entries/hello-world.html">Hello World</a>
-  <br>
-  <small style="color: grey;"><time>2026-02-24 10:51</time></small>
-</li></ul></main>
-  
-   <footer class="hn-footer">
+  <br />
+  <small style="color: grey"><time>2026-02-24 10:51</time></small>
+</li>
+
+      </ul>
+    </main>
+
+       <footer class="hn-footer">
     <div class="footer-divider"></div>
     
     <nav class="footer-links">
@@ -37,5 +59,5 @@
 
  
 </footer>
-</body>
+  </body>
 </html>

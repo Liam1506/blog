@@ -1,12 +1,16 @@
 from pathlib import Path
 from constants import *
+from scripts.moveAssets import *
 from scripts.helper.updateTemplate import *
+from scripts.helper.imreadFile import *
 from scripts.metadata.getMetadata import * 
+
 
 def buildIndex(paths: list[str]):
     print(f"Processing {len(paths)} paths...")
     data_items = []
     for p in paths:
+        moveAssets(p)
         data_items.append({
             "path": p,
             "metadata": getMetadata(p)
@@ -37,7 +41,6 @@ def buildIndex(paths: list[str]):
     indexHTML = updateTemplate(key="links", updateValue=linksHtml, template=indexTemplate)
     indexHTML = updateTemplate(key="prefetch", updateValue=preLoadHtml, template=indexHTML)
 
-
     indexHTML = updateTemplate(key="footer", updateValue=imreadFile(FOOTER_PATH), template=indexHTML)
     indexHTML = updateTemplate(key="header", updateValue=imreadFile(HEADER_PATH), template=indexHTML)
 
@@ -46,7 +49,4 @@ def buildIndex(paths: list[str]):
     
     print(f"Successfully wrote index to {SERVE_PATH}index.html")
 
-def imreadFile(templatePath):
-    with open(templatePath, "r") as f:
-        return f.read()
-   
+
