@@ -1,5 +1,3 @@
-### Why and How I Wrote the Blog Itself
-
 The first question that comes to mind is why I am writing my blog here with my own system instead of using Medium or dev.to. The main reason is that I recently bought the domain [wttg.li](https://wttg.li), but at the moment, I don't really have a purpose for it. So I thought, why not set up a blog here?
 
 The next question is why I don't use an already created tool like [Wordpress](https://wordpress.com/) or [Ghost](https://ghost.org/). The main reason is that I just like building things. I know it’s objectively a bad decision, but I enjoy it. Moreover, I don't really like the "setup hustle" that comes with big CMS tools, although Ghost isn't that bad from all I’ve heard. I also recently saw that you can use the Astro blog template and probably get a better result, but where's the fun in that?
