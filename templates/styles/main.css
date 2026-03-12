@@ -84,6 +84,15 @@ body {
   padding: 0 15px;
 }
 
+.article-date {
+  padding-top: 0px;
+  color: #5c5c5c;
+}
+.article-headline {
+  padding-top: 20px;
+
+  padding-bottom: 0px;
+}
 img {
   max-width: 800px;
   max-height: 800px;

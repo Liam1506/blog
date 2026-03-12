@@ -25,7 +25,7 @@ def createMetadata(name, date, folder_path):
 def createFile(folder_path, date, name):
     file_path = folder_path / "text.md"
     with open(file_path, "w") as f:
-        f.write(f"# {name}\n{str(date)[:16]}\n\n")
+        f.write(f"")
 
 def main():
     nameOfArticle = input("Name of the article: ")

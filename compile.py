@@ -25,6 +25,12 @@ def clearEntries():
         f.write(cname_content)
 
 
+def buildHeadline(date, name)->str:
+      headline = updateTemplate(key="date", template=imreadFile(HEADLINE_PATH), updateValue=str(date)[:16])
+      headline = updateTemplate(key="articleName", template=headline, updateValue=name)
+      return headline
+   
+
 def main():
    folders = os.listdir(RAW)
    foldersToPublish = []
@@ -82,6 +88,11 @@ def main():
       blogTemplate = updateTemplate(key="title", template=blogTemplate, updateValue=metadata.name)
       blogTemplate = updateTemplate(key="footer", template=blogTemplate, updateValue=imreadFile(FOOTER_PATH))
       blogTemplate = updateTemplate(key="header", template=blogTemplate, updateValue=imreadFile(HEADER_PATH))
+      headline = buildHeadline(date=metadata.date, name=metadata.name)
+      blogTemplate = updateTemplate(key="headline", template=blogTemplate, updateValue=headline)
+    
+
+
 
       with open(outputName, "w", encoding="utf-8") as f:
          f.write(blogTemplate)

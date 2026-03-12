@@ -32,9 +32,12 @@
 </header>
 
 
-    <main><div class="article-section"><h1 id="readme">README<a class="headerlink" href="#readme" title="Permanent link">&para;</a></h1>
-<p>2026-02-25 10:43</p>
-<h2 id="python-blog-generator">Python Blog Generator<a class="headerlink" href="#python-blog-generator" title="Permanent link">&para;</a></h2>
+    <main>
+      <div class="article-section">
+        <div><h1 class="article-headline">README (From this project)</h1>
+<p class="article-date">2026-02-25 10:43</p>
+</div>
+        <h2 id="python-blog-generator">Python Blog Generator<a class="headerlink" href="#python-blog-generator" title="Permanent link">&para;</a></h2>
 <p>Visit at <a href="https://blog.wttg.li">blog.wttg.li</a></p>
 <p>A very simple (&lt;300 lines of python code), script-based static site generator for minimalist blogging. Write in Markdown, compile to HTML, and host anywhere.</p>
 <hr />
@@ -49,17 +52,18 @@ pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </s
 <p>Run the creation script. It will prompt you in the terminal for the name of your new article:</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>create_entry.py
 </code></pre></div>
-<p>This automatically scaffolds a new folder at <code>entries/article-name/</code> containing <code>text.md</code> and <code>metadata.json</code>.</p>
+<p>This automatically scaffolds a new folder at <code>entries/article-name/</code> containing <code>text.md</code> and <code>metadata.json</code> as well as an <code>asset</code> folder.</p>
 <h3 id="2-write-your-content">2. Write your Content<a class="headerlink" href="#2-write-your-content" title="Permanent link">&para;</a></h3>
 <p>Navigate to your new folder and open <code>text.md</code>. This is where your post lives. Write using standard Markdown syntax.</p>
 <h3 id="3-enable-publishing">3. Enable Publishing<a class="headerlink" href="#3-enable-publishing" title="Permanent link">&para;</a></h3>
-<p>New posts are drafts by default. To include a post in the final site build, open the <code>metadata.json</code> file in your article's folder and set the <code>publish</code> flag to <code>true</code>:</p>
+<p>New posts are drafts by default. To include a post in the final site build, open the <code>metadata.json</code> file in your article's folder and set the <code>publish</code> flag to <code>true</code> (usually located in <code>articles/article-name/metadata.json</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Article Name&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-24&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;publish&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="p">}</span>
 </code></pre></div>
+<p>There will also be an <code>asset</code> folder created in the article folder. You can place images there and use them in Markdown. All files from the <code>asset</code> folder will be copied into the asset folder in the <code>docs</code> directory. Therefore, it is important that every asset has a unique name, also between articles. This will probably be changed in the future.</p>
 <h3 id="4-compile-the-site">4. Compile the Site<a class="headerlink" href="#4-compile-the-site" title="Permanent link">&para;</a></h3>
 <p>Once you've finished writing and set your metadata, run the compiler:</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>compile.py
@@ -67,7 +71,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </s
 <p>The script will process your Markdown and templates, placing the finished website in the <code>docs/</code> folder.</p>
 <h2 id="project-structure">📁 Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>entries/</strong>: Each sub-folder represents a post containing <code>text.md</code> and <code>metadata.json</code>.</li>
+<li><strong>entries/</strong>: Each sub-folder represents a post containing <code>text.md</code>, <code>metadata.json</code> and an <code>asset</code> folder.</li>
 <li><strong>template/</strong>: Contains the HTML layouts that wrap your content.</li>
 <li><strong>docs/</strong>: This is the final output folder ready for hosting (e.g., GitHub Pages). Never edit here. It will be overwritten</li>
 <li><strong>create_entry.py</strong>: Creates a new artcile with required metadata</li>
@@ -75,7 +79,12 @@ pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </s
 <li><strong>templates/</strong>: Containes templates for fooder, hearder, blog etc.</li>
 </ul>
 <h2 id="deployment">🚀 Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
-<p>Since the final output is generated in the <code>docs/</code> folder, it's perfectly optimized for GitHub Pages. Just set your repository settings to serve from the <code>/docs</code> folder, and your blog is live!</p></div></main>
+<p>Since the final output is generated in the <code>docs/</code> folder, it's perfectly optimized for GitHub Pages. Just set your repository settings to serve from the <code>/docs</code> folder, and your blog is live!</p>
+<blockquote>
+<p>This is only a hobby project and not production ready at all. It is very likely, that bugs and parsing errors will occur. Moreover, there is and will be no text senetization implemented. Therefore, it is not recommended to use Markdown from unsafe locations.</p>
+</blockquote>
+      </div>
+    </main>
 
        <footer class="hn-footer">
     <div class="footer-divider"></div>

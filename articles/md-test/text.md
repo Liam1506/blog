@@ -1,7 +1,3 @@
-# MD Test
-
-2026-02-25 08:51
-
 # Markdown Parser Test File
 
 This is a comprehensive test file covering most standard Markdown syntax elements.

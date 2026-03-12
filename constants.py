@@ -20,6 +20,8 @@ TEMPLATE_PATH = 'templates/'
 ELEMENTS_PATH = TEMPLATE_PATH + "elements/"
 FOOTER_PATH = ELEMENTS_PATH + "footer.html"
 
+HEADLINE_PATH = ELEMENTS_PATH + "headline.html"
+
 HEADER_PATH = ELEMENTS_PATH + "header.html"
 
 BLOG_TEMPLATE =  TEMPLATE_PATH + ENTRIES_NAME+ 'blogTemplate.html'
