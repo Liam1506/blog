@@ -67,3 +67,5 @@ The script will process your Markdown and templates, placing the finished websit
 ## 🚀 Deployment
 
 Since the final output is generated in the `docs/` folder, it's perfectly optimized for GitHub Pages. Just set your repository settings to serve from the `/docs` folder, and your blog is live!
+
+You don't have to compile locally: on every push to `main`, the GitHub Action in `.github/workflows/compile.yml` runs `compile.py` and commits the updated `docs/` folder. It can also be triggered manually from the Actions tab.

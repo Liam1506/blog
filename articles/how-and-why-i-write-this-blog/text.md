@@ -8,7 +8,7 @@ The tech stack I settled on was a Python static page generator that generates pl
 
 For the aesthetic, I tried to go for a Hacker News-like style. I know it’s not exactly pretty, but I enjoy surfing there and like the community itself. This style also aligns very well with my design decision to only use plain HTML and CSS.
 
-For hosting, I decided to use GitHub Pages. It’s incredibly easy to use since I can just push my repository to update the blog. Later on, I will move the compile script to GitHub Actions, but I haven't found the time yet, so for now, I compile the blog on my laptop. That’s basically all the tech I used. The whole project is <300 lines of Python code.
+For hosting, I decided to use GitHub Pages. It’s incredibly easy to use since I can just push my repository to update the blog. I don't even have to compile the blog on my laptop anymore: a GitHub Action runs the compile script on every push and commits the generated HTML back to the repository. That’s basically all the tech I used. The whole project is <300 lines of Python code.
 
 ### What I Will Do on This Blog
 
