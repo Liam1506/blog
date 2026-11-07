@@ -80,6 +80,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </s
 </ul>
 <h2 id="deployment">🚀 Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
 <p>Since the final output is generated in the <code>docs/</code> folder, it's perfectly optimized for GitHub Pages. Just set your repository settings to serve from the <code>/docs</code> folder, and your blog is live!</p>
+<p>You don't have to compile locally: on every push to <code>main</code>, the GitHub Action in <code>.github/workflows/compile.yml</code> runs <code>compile.py</code> and commits the updated <code>docs/</code> folder. It can also be triggered manually from the Actions tab.</p>
 <blockquote>
 <p>This is only a hobby project and not production ready at all. It is very likely, that bugs and parsing errors will occur. Moreover, there is and will be no text senetization implemented. Therefore, it is not recommended to use Markdown from unsafe locations.</p>
 </blockquote>
