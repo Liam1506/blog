@@ -1,6 +1,5 @@
 from pathlib import Path
 from constants import *
-from scripts.moveAssets import *
 from scripts.helper.updateTemplate import *
 from scripts.helper.imreadFile import *
 from scripts.metadata.getMetadata import * 
@@ -10,7 +9,6 @@ def buildIndex(paths: list[str]):
     print(f"Processing {len(paths)} paths...")
     data_items = []
     for p in paths:
-        moveAssets(p)
         data_items.append({
             "path": p,
             "metadata": getMetadata(p)

@@ -14,7 +14,7 @@ ENTRIES = SERVE_PATH+ENTRIES_NAME
 
 ASSETS_FOLDER = "assets/"
 
-ASSETS_ENTRIES_FOLDER = ENTRIES + ASSETS_FOLDER
+ENTRY_FILE_NAME = "index.html"
 
 TEMPLATE_PATH = 'templates/'
 ELEMENTS_PATH = TEMPLATE_PATH + "elements/"
@@ -30,6 +30,8 @@ LINK_TEMPLATE =  TEMPLATE_PATH + 'linkTemplate.html'
 INDEX_TEMPLATE =  TEMPLATE_PATH + 'indexTemplate.html'
 
 PREFETCH_TEMPLATE =  TEMPLATE_PATH + 'prefetchTemplate.html'
+
+REDIRECT_TEMPLATE =  TEMPLATE_PATH + 'redirectTemplate.html'
 
 STYLES = "styles/"
 ASSETS_FOLDER = "assets/"

@@ -6,4 +6,4 @@ import os
 def moveAssets(name: str):
    assetPath = Path(RAW) / Path(name) / ASSETS_FOLDER
    if(os.path.isdir(assetPath)):
-      shutil.copytree(assetPath, ASSETS_ENTRIES_FOLDER, dirs_exist_ok=True)
+      shutil.copytree(assetPath, Path(ENTRIES) / name / ASSETS_FOLDER, dirs_exist_ok=True)

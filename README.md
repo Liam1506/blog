@@ -27,7 +27,7 @@ Run the creation script. It will prompt you in the terminal for the name of your
 python create_entry.py
 ```
 
-This automatically scaffolds a new folder at `entries/article-name/` containing `text.md` and `metadata.json`.
+This automatically scaffolds a new folder at `articles/article-name/` containing `text.md` and `metadata.json` as well as an `assets` folder.
 
 ### 2. Write your Content
 
@@ -45,6 +45,8 @@ New posts are drafts by default. To include a post in the final site build, open
 }
 ```
 
+There will also be an `assets` folder created in the article folder. You can place images there and reference them relatively in Markdown, e.g. `![Image](assets/image.jpg)`. Each article is compiled into its own folder (`docs/entries/article-name/index.html`) and its `assets` folder is copied right next to it, so asset names only have to be unique within an article.
+
 ### 4. Compile the Site
 
 Once you've finished writing and set your metadata, run the compiler:
@@ -57,9 +59,9 @@ The script will process your Markdown and templates, placing the finished websit
 
 ## 📁 Project Structure
 
-- **entries/**: Each sub-folder represents a post containing `text.md` and `metadata.json`.
+- **articles/**: Each sub-folder represents a post containing `text.md`, `metadata.json` and an `assets` folder.
 - **template/**: Contains the HTML layouts that wrap your content.
-- **docs/**: This is the final output folder ready for hosting (e.g., GitHub Pages). Never edit here. It will be overwritten
+- **docs/**: This is the final output folder ready for hosting (e.g., GitHub Pages). Never edit here. It will be overwritten. Every article ends up in its own folder `docs/entries/article-name/` containing an `index.html` and its `assets` folder.
 - **create_entry.py**: Creates a new artcile with required metadata
 - **compile.py**: Creates requried html files
 - **templates/**: Containes templates for fooder, hearder, blog etc.

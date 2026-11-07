@@ -5,6 +5,7 @@ from pathlib import Path
 from scripts.buildIndex import *
 import shutil
 from scripts.metadata.getMetadata import getMetadata
+from scripts.moveAssets import moveAssets
 
 def moveStyles():
    pathServe = Path(SERVE_PATH)/ Path(STYLES)
@@ -23,6 +24,13 @@ def clearEntries():
     
     with open(CNAME, "w") as f:
         f.write(cname_content)
+
+
+def buildRedirect(folder):
+   # Old URLs were entries/<name>.html, keep them working
+   redirect = updateTemplate(key="link", template=imreadFile(REDIRECT_TEMPLATE), updateValue=folder + "/")
+   with open(Path(ENTRIES) / Path(folder + ".html"), "w", encoding="utf-8") as f:
+      f.write(redirect)
 
 
 def buildHeadline(date, name)->str:
@@ -45,11 +53,11 @@ def main():
 
       path = Path(RAW) / Path(folder)
       filePath = path / Path(TEXT_FILE_NAME)
-      fileNameOutput = folder+".html"
-
-      outputName = Path(ENTRIES) / Path(fileNameOutput)
+      outputName = Path(ENTRIES) / Path(folder) / Path(ENTRY_FILE_NAME)
 
       outputName.parent.mkdir(parents=True, exist_ok=True)
+      moveAssets(folder)
+      buildRedirect(folder)
       
       blogTemplate = imreadFile(BLOG_TEMPLATE)
       with open(filePath, "r", encoding="utf-8") as f:
